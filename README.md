@@ -276,13 +276,13 @@ OnCare는 방문 요양 기관의 운영 효율을 높이기 위해 기획·개�
 
 ## 📄 WBS
 
-🔗 [WBS 바로가기](https://docs.google.com/spreadsheets/d/1LKRA_FTxVP1aXb2mOxQGSUPFLPpw8EjTVss2mr-ZT3s/edit?gid=774177036#gid=774177036)
+🔗 [WBS 바로가기](https://docs.google.com/spreadsheets/d/1_9muPoG2TCygdrsBb2QGj5fwmSjnReSOMnvmmsylSCk/edit?gid=1154634314#gid=1154634314)
 
 ---
 
 ## 🙆‍♀️ 요구사항 명세서
 
-🔗 [요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1LKRA_FTxVP1aXb2mOxQGSUPFLPpw8EjTVss2mr-ZT3s/edit?gid=0#gid=0)
+🔗 [요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1_9muPoG2TCygdrsBb2QGj5fwmSjnReSOMnvmmsylSCk/edit?gid=0#gid=0)
 
 ---
 
