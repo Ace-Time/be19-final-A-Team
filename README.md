@@ -1,7 +1,7 @@
 # 방문 요양 고객관리 ERP OnCare
 
 <p align="center">
-  <img width="1430" height="806" alt="image" src="https://github.com/user-attachments/assets/a25e540e-3fb5-4edd-bf2d-053bef1073f0" />
+  <img width="1430" height="806" alt="image" src="https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EB%A9%94%EC%9D%B8%EC%82%AC%EC%A7%84/%EB%B0%A9%EB%AC%B8%EC%9A%94%EC%96%91%20%EB%A9%94%EC%9D%B8%EC%82%AC%EC%A7%84.jpg" />
 </p>
 
 
