@@ -1,6 +1,3 @@
-# be19-final-A-Team
-
-
 # 맞춤형 운동 다이어트 & 식단 관리 서비스
 
 <p align="center">
