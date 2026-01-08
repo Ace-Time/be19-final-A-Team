@@ -344,13 +344,13 @@ OnCare는 방문 요양 기관의 운영 효율을 높이기 위해 기획·개�
 
 **1. Domain Event Storming**
 
-![]([https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/DDD/1.png](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/DDD/DDD.png))
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/DDD/DDD.png)
 
 ---
 
 ## 🗃️ DB 모델링
 
-![]([https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/ERD/erdcloud.png](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/ERD/erd%20cloud.png))
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/ERD/erd%20cloud.png)
 
 ---
 
