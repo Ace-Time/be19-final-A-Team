@@ -29,37 +29,37 @@
     <tr align="center">
       <td>
         <a href="https://github.com/kjin0204" target="_blank">
-          <img src="https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B9%80%EA%B1%B4%EC%9A%B0.jpg" width="210" style="border-radius:100%" alt="강형규"/><br/>
+          <img src="https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B0%95%ED%98%95%EA%B7%9C.png" width="210" style="border-radius:100%" alt="강형규"/><br/>
           <b>강형규</b>
         </a>
       </td>
       <td>
         <a href="https://github.com/Yunji458" target="_blank">
-          <img src="https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%86%A1%EC%95%84%EB%A6%84.jpg" width="210" style="border-radius:100%" alt="김윤지"/><br/>
+          <img src="https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B9%80%EC%9C%A4%EC%A7%80.png" width="210" style="border-radius:100%" alt="김윤지"/><br/>
           <b>김윤지</b>
         </a>
       </td>
       <td>
         <a href="https://github.com/woo-kyoung-nam" target="_blank">
-          <img src="https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B9%80%EA%B0%95%EB%AF%BC.jpg" width="210" style="border-radius:100%" alt="남우경"/><br/>
+          <img src="https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%82%A8%EC%9A%B0%EA%B2%BD.png" width="210" style="border-radius:100%" alt="남우경"/><br/>
           <b>남우경</b>
         </a>
       </td>
       <td>
         <a href="https://github.com/seoguhoe2" target="_blank">
-          <img src="https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%9E%A5%EC%84%B1%EC%97%BD.jpg" width="210" style="border-radius:100%" alt="백준승"/><br/>
+          <img src="https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%B0%B1%EC%A4%80%EC%8A%B9.png" width="210" style="border-radius:100%" alt="백준승"/><br/>
           <b>백준승</b>
         </a>
       </td>
       <td>
         <a href="https://github.com/leejaeguen" target="_blank">
-          <img src="https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B9%80%EB%AF%BC%EC%88%98.jpeg" width="210" style="border-radius:100%" alt="이재근"/><br/>
+          <img src="https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%9D%B4%EC%9E%AC%EA%B7%BC.png" width="210" style="border-radius:100%" alt="이재근"/><br/>
           <b>이재근</b>
         </a>
       </td>
       <td>
         <a href="https://github.com/golealda" target="_blank">
-          <img src="https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A4%80%EA%B7%9C%EB%B9%8C%EB%8D%94.jpg" width="210" style="border-radius:100%" alt="이현수"/><br/>
+          <img src="https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EA%B0%9C%EC%9D%B8%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%9D%B4%ED%98%84%EC%88%98.png" width="210" style="border-radius:100%" alt="이현수"/><br/>
           <b>이현수</b>
         </a>
       </td>
