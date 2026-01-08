@@ -1,13 +1,14 @@
-# 맞춤형 운동 다이어트 & 식단 관리 서비스
+# 방문 요양 고객관리 ERP OnCare
 
 <p align="center">
   <img width="1430" height="806" alt="image" src="https://github.com/user-attachments/assets/a25e540e-3fb5-4edd-bf2d-053bef1073f0" />
 </p>
 
 
-<h1>작은 변화부터 가볍게 시작해요. CalMate가 함께할게요!</h1>
+<h1>현장 중심의 요양 서비스 운영을 위한 올인원 관리 솔루션</h1>
 
-> **맞춤형 운동 다이어트 & 식단 관리 서비스** 란 본인의 체형 및 기초대사량을 기반으로 식단 및 운동 기록 뿐만 아니라 AI를 통해 추천하고, 게시판 소통을 하며 이벤트 게임을 통해 유익한 정보를 공유하는 서비스입니다.
+> 수급자, 요양보호사, 방문 일정, 직원, 용품, 업무 현황을 하나의 시스템에서 통합 관리할 수 있는 방문 요양 전용 ERP입니다.<br/>
+현장의 실제 업무 흐름을 기반으로 설계되어, 반복적인 행정 업무를 줄이고 운영 효율을 높이며 안정적인 요양 서비스 제공을 지원합니다.
 
 ---
 
@@ -127,6 +128,14 @@
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+### 🏗️ Infrastructure
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![MySQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![Grafana Loki](https://img.shields.io/badge/Grafana_Loki-F46800?style=for-the-badge&logo=grafana&logoColor=white)
 
 ---
 
