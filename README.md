@@ -89,8 +89,6 @@
 
 [**🗃️ DB 모델링**](#️-DB-모델링)
 
-[**🪄 Figma**](#-FIGMA)
-
 [**🛜 AWS 배포 전략**](#-AWS-배포-전략)
 
 [**🚩 성능 개선과 모니터링 전략**](#-성능-개선과-모니터링-전략)
@@ -352,155 +350,19 @@ OnCare는 방문 요양 기관의 운영 효율을 높이기 위해 기획·개�
 
 ---
 
-## 🪄 Figma
-
-🔗 [Figma 디자인]
-
-![](https://github.com/Cal-Mate/be19-4th-Cal-Mate-Dev/blob/main/img/Figma/Figma.png)
-
----
-
 ## 🛜 AWS 배포 전략
 
-![](img/CICD/Architecture.png)
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/AWS%20%EB%B0%B0%ED%8F%AC%20%EC%A0%84%EB%9E%B5/1.png)
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/AWS%20%EB%B0%B0%ED%8F%AC%20%EC%A0%84%EB%9E%B5/2.png)
 
 ---
 
 ## 🚩 성능 개선과 모니터링 전략
 
-```
-pipeline {
-    agent any
-
-    tools {
-        gradle 'gradle'
-        jdk 'openJDK17'
-    }
-
-    environment {
-        SOURCE_GITHUB_URL = 'https://github.com/Cal-Mate/CalMate-Backend.git'
-        MANIFESTS_GITHUB_URL = 'https://github.com/Cal-Mate/cal-mate-argo.git'
-        GIT_USERNAME = 'kjin0204'
-        GIT_EMAIL = 'kin0204@naver.com'
-    }
-
-    stages {
-        stage('Preparation') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        sh 'docker --version'
-                    } else {
-                        bat 'docker --version'
-                    }
-                }
-            }
-        }
-        stage('Source Build') {
-            steps {
-                git branch: 'main', url: "${env.SOURCE_GITHUB_URL}"
-                script {
-                    if (isUnix()) {
-                        sh 'chmod +x ./back_end_soruce/gradlew'
-                        sh './back_end_soruce/gradlew -p back_end_soruce clean build -x test'
-                    } else {
-                        bat '.\\back_end_soruce\\gradlew.bat -p back_end_soruce clean build -x test'
-                    }
-                }
-            }
-        }
-        stage('Container Build and Push') {
-            steps {
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        if (isUnix()) {
-                            dir('back_end_soruce'){
-                            sh "docker build -t ${DOCKER_USER}/cal_mate_back:${currentBuild.number} ."
-                            sh "docker build -t ${DOCKER_USER}/cal_mate_back:latest  ." }
-                            sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}"
-                            sh "docker push ${DOCKER_USER}/cal_mate_back:${currentBuild.number}"
-                            sh "docker push ${DOCKER_USER}/cal_mate_back:latest"
-                        } else {
-                            dir('back_end_soruce'){
-                            bat "docker build -t ${DOCKER_USER}/cal_mate_back:${currentBuild.number}  ."
-                            bat "docker build -t ${DOCKER_USER}/cal_mate_back:latest  ." }
-                            bat "docker login -u %DOCKER_USER% -p %DOCKER_PASS%"
-                            bat "docker push ${DOCKER_USER}/cal_mate_back:${currentBuild.number}"
-                            bat "docker push ${DOCKER_USER}/cal_mate_back:latest"
-                        }
-                    }
-                }
-            }
-        }
-        stage('K8S Manifest Update') {
-            steps {
-                // k8s-manifests 리포지토리를 main 브랜치에서 클론한다. 이때 자격 증명 github가 사용된다.
-                git credentialsId: 'github',
-                    url: "${env.MANIFESTS_GITHUB_URL}",
-                    branch: 'main'
-                
-                script { 
-                    withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
-                        def githubUrl = env.MANIFESTS_GITHUB_URL.replace('https://', '')
-                        if (isUnix()) {
-                            // Unix 시스템에서 boot-deployment.yml 파일 수정 후 commit 후 push
-                            sh "sed -i '' 's/cal_mate_back:.*\$/cal_mate_back:${currentBuild.number}/g' argo_deploy/cal-mate-back-dep.yml"
-                            sh "git add argo_deploy/cal-mate-back-dep.yml"
-                            sh "git config --global user.name '${env.GIT_USERNAME}'"
-                            sh "git config --global user.email '${env.GIT_EMAIL}'"
-                            sh "git commit -m '[UPDATE] ${currentBuild.number} image versioning'"
-                            // 인증 정보 포함하여 push
-                            sh "git push https://${GIT_USER}:${GIT_PASS}@${githubUrl} main"
-                        } else {
-                            // Windows 시스템에서 boot-deployment.yml 파일 수정 후 commit 후 push
-                            bat "powershell -Command \"(Get-Content argo_deploy/cal-mate-back-dep.yml) -replace 'cal_mate_back:.*', 'cal_mate_back:${currentBuild.number}' | Set-Content argo_deploy/cal-mate-back-dep.yml\""
-                            bat "git add argo_deploy/cal-mate-back-dep.yml"
-                            bat "git config --global user.name '${env.GIT_USERNAME}'"
-                            bat "git config --global user.email '${env.GIT_EMAIL}'"
-                            bat "git commit -m \"[UPDATE] ${currentBuild.number} image versioning\""
-                            // Windows에서 변수 참조 방식 사용
-                            bat "git push https://%GIT_USER%:%GIT_PASS%@${githubUrl} main"
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    post {
-        always {
-            script {
-                if (isUnix()) {
-                    sh 'docker logout'
-                } else {
-                    bat 'docker logout'
-                }
-            }
-        }
-        success {
-            echo 'Pipeline succeeded!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
-    }
-}
-```
----
-
-## 📱 CI/CD 테스트
-
-## 젠킨스 
-- git hub push 이벤트(webhook)을 통해 소스 자동 빌드
-- docker file 생성 및 docker Hub push
-- 매니 페스트 수정 후 git hub push
-<img width="1834" height="1488" alt="image" src="https://github.com/user-attachments/assets/a7a43855-cece-405d-a418-180c12eda0fe" />
-
-
-## ArgoCD
-- git hub repository와 연결 하여 manifest와의 싱크를 맞춰 k8s 클러스터를 생성
-  <img width="1397" height="299" alt="image" src="https://github.com/user-attachments/assets/0487365f-e533-4101-91d6-286f0f51b799" />
-
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EC%84%B1%EB%8A%A5%20%EA%B0%9C%EC%84%A0%EA%B3%BC%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EC%A0%84%EB%9E%B5/1.png)
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EC%84%B1%EB%8A%A5%20%EA%B0%9C%EC%84%A0%EA%B3%BC%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EC%A0%84%EB%9E%B5/2.png)
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EC%84%B1%EB%8A%A5%20%EA%B0%9C%EC%84%A0%EA%B3%BC%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EC%A0%84%EB%9E%B5/3.png)
+![](https://github.com/Ace-Time/be19-final-A-Team/blob/main/img/%EC%84%B1%EB%8A%A5%20%EA%B0%9C%EC%84%A0%EA%B3%BC%20%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%20%EC%A0%84%EB%9E%B5/4.png)
 
 ---
 
